@@ -1,0 +1,405 @@
+{
+  "version": "3.2",
+  "log": [
+    {
+      "VoteContract": {
+        "src": "contracts/Vote.sol:3",
+        "version": {
+          "withMetadata": "5d7c276a03db81981203a6437b1f69b358d5992cdd5ce57712ca477c6d934524",
+          "withoutMetadata": "e49c027c83e387477e1fd54397c54614ce1ad204ffd7cb6a58eddfa90a81406e",
+          "linkedWithoutMetadata": "e49c027c83e387477e1fd54397c54614ce1ad204ffd7cb6a58eddfa90a81406e"
+        },
+        "inherit": [],
+        "libraries": [],
+        "methods": [
+          "voteContract()",
+          "getOwner()",
+          "addCandidate(string,string,uint256)",
+          "getCandidateNumber()",
+          "requestVoter(string,uint256)",
+          "getVoterCount()",
+          "verifyVoter(address)",
+          "vote(uint256)",
+          "startElection()",
+          "endElection()",
+          "getStart()",
+          "getEnd()"
+        ],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [
+            {
+              "label": "owner",
+              "offset": 0,
+              "slot": "0",
+              "type": "t_address",
+              "contract": "VoteContract",
+              "src": "contracts/Vote.sol:4"
+            },
+            {
+              "label": "candidateCount",
+              "offset": 0,
+              "slot": "1",
+              "type": "t_uint256",
+              "contract": "VoteContract",
+              "src": "contracts/Vote.sol:5"
+            },
+            {
+              "label": "voterCount",
+              "offset": 0,
+              "slot": "2",
+              "type": "t_uint256",
+              "contract": "VoteContract",
+              "src": "contracts/Vote.sol:6"
+            },
+            {
+              "label": "start",
+              "offset": 0,
+              "slot": "3",
+              "type": "t_bool",
+              "contract": "VoteContract",
+              "src": "contracts/Vote.sol:7"
+            },
+            {
+              "label": "end",
+              "offset": 1,
+              "slot": "3",
+              "type": "t_bool",
+              "contract": "VoteContract",
+              "src": "contracts/Vote.sol:8"
+            },
+            {
+              "label": "candidateDetails",
+              "offset": 0,
+              "slot": "4",
+              "type": "t_mapping(t_uint256,t_struct(Candidate)66_storage)",
+              "contract": "VoteContract",
+              "src": "contracts/Vote.sol:32"
+            },
+            {
+              "label": "voters",
+              "offset": 0,
+              "slot": "5",
+              "type": "t_array(t_address)dyn_storage",
+              "contract": "VoteContract",
+              "src": "contracts/Vote.sol:56"
+            },
+            {
+              "label": "voterDetails",
+              "offset": 0,
+              "slot": "6",
+              "type": "t_mapping(t_address,t_struct(Voter)123_storage)",
+              "contract": "VoteContract",
+              "src": "contracts/Vote.sol:57"
+            }
+          ],
+          "types": {
+            "t_address": {
+              "label": "address",
+              "numberOfBytes": "20"
+            },
+            "t_array(t_address)dyn_storage": {
+              "label": "address[]",
+              "numberOfBytes": "32"
+            },
+            "t_bool": {
+              "label": "bool",
+              "numberOfBytes": "1"
+            },
+            "t_mapping(t_address,t_struct(Voter)123_storage)": {
+              "label": "mapping(address => struct VoteContract.Voter)",
+              "numberOfBytes": "32"
+            },
+            "t_mapping(t_uint256,t_struct(Candidate)66_storage)": {
+              "label": "mapping(uint256 => struct VoteContract.Candidate)",
+              "numberOfBytes": "32"
+            },
+            "t_string_storage": {
+              "label": "string",
+              "numberOfBytes": "32"
+            },
+            "t_struct(Candidate)66_storage": {
+              "label": "struct VoteContract.Candidate",
+              "members": [
+                {
+                  "label": "name",
+                  "type": "t_string_storage",
+                  "offset": 0,
+                  "slot": "0"
+                },
+                {
+                  "label": "stakeholder",
+                  "type": "t_string_storage",
+                  "offset": 0,
+                  "slot": "1"
+                },
+                {
+                  "label": "voteCount",
+                  "type": "t_uint256",
+                  "offset": 0,
+                  "slot": "2"
+                },
+                {
+                  "label": "voteID",
+                  "type": "t_uint256",
+                  "offset": 0,
+                  "slot": "3"
+                },
+                {
+                  "label": "candidateId",
+                  "type": "t_uint256",
+                  "offset": 0,
+                  "slot": "4"
+                }
+              ],
+              "numberOfBytes": "160"
+            },
+            "t_struct(Voter)123_storage": {
+              "label": "struct VoteContract.Voter",
+              "members": [
+                {
+                  "label": "voterAddress",
+                  "type": "t_address",
+                  "offset": 0,
+                  "slot": "0"
+                },
+                {
+                  "label": "name",
+                  "type": "t_string_storage",
+                  "offset": 0,
+                  "slot": "1"
+                },
+                {
+                  "label": "constituency",
+                  "type": "t_uint256",
+                  "offset": 0,
+                  "slot": "2"
+                },
+                {
+                  "label": "hasVoted",
+                  "type": "t_bool",
+                  "offset": 0,
+                  "slot": "3"
+                },
+                {
+                  "label": "isVerified",
+                  "type": "t_bool",
+                  "offset": 1,
+                  "slot": "3"
+                }
+              ],
+              "numberOfBytes": "128"
+            },
+            "t_uint256": {
+              "label": "uint256",
+              "numberOfBytes": "32"
+            }
+          },
+          "layoutVersion": "1.1",
+          "flat": true
+        }
+      }
+    },
+    {
+      "VoteContract": {
+        "src": "contracts/Vote.sol:3",
+        "version": {
+          "withMetadata": "5d7c276a03db81981203a6437b1f69b358d5992cdd5ce57712ca477c6d934524",
+          "withoutMetadata": "e49c027c83e387477e1fd54397c54614ce1ad204ffd7cb6a58eddfa90a81406e",
+          "linkedWithoutMetadata": "e49c027c83e387477e1fd54397c54614ce1ad204ffd7cb6a58eddfa90a81406e"
+        },
+        "inherit": [],
+        "libraries": [],
+        "methods": [
+          "voteContract()",
+          "getOwner()",
+          "addCandidate(string,string,uint256)",
+          "getCandidateNumber()",
+          "requestVoter(string,uint256)",
+          "getVoterCount()",
+          "verifyVoter(address)",
+          "vote(uint256)",
+          "startElection()",
+          "endElection()",
+          "getStart()",
+          "getEnd()"
+        ],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [
+            {
+              "label": "owner",
+              "offset": 0,
+              "slot": "0",
+              "type": "t_address",
+              "contract": "VoteContract",
+              "src": "contracts/Vote.sol:4"
+            },
+            {
+              "label": "candidateCount",
+              "offset": 0,
+              "slot": "1",
+              "type": "t_uint256",
+              "contract": "VoteContract",
+              "src": "contracts/Vote.sol:5"
+            },
+            {
+              "label": "voterCount",
+              "offset": 0,
+              "slot": "2",
+              "type": "t_uint256",
+              "contract": "VoteContract",
+              "src": "contracts/Vote.sol:6"
+            },
+            {
+              "label": "start",
+              "offset": 0,
+              "slot": "3",
+              "type": "t_bool",
+              "contract": "VoteContract",
+              "src": "contracts/Vote.sol:7"
+            },
+            {
+              "label": "end",
+              "offset": 1,
+              "slot": "3",
+              "type": "t_bool",
+              "contract": "VoteContract",
+              "src": "contracts/Vote.sol:8"
+            },
+            {
+              "label": "candidateDetails",
+              "offset": 0,
+              "slot": "4",
+              "type": "t_mapping(t_uint256,t_struct(Candidate)66_storage)",
+              "contract": "VoteContract",
+              "src": "contracts/Vote.sol:32"
+            },
+            {
+              "label": "voters",
+              "offset": 0,
+              "slot": "5",
+              "type": "t_array(t_address)dyn_storage",
+              "contract": "VoteContract",
+              "src": "contracts/Vote.sol:56"
+            },
+            {
+              "label": "voterDetails",
+              "offset": 0,
+              "slot": "6",
+              "type": "t_mapping(t_address,t_struct(Voter)123_storage)",
+              "contract": "VoteContract",
+              "src": "contracts/Vote.sol:57"
+            }
+          ],
+          "types": {
+            "t_address": {
+              "label": "address",
+              "numberOfBytes": "20"
+            },
+            "t_array(t_address)dyn_storage": {
+              "label": "address[]",
+              "numberOfBytes": "32"
+            },
+            "t_bool": {
+              "label": "bool",
+              "numberOfBytes": "1"
+            },
+            "t_mapping(t_address,t_struct(Voter)123_storage)": {
+              "label": "mapping(address => struct VoteContract.Voter)",
+              "numberOfBytes": "32"
+            },
+            "t_mapping(t_uint256,t_struct(Candidate)66_storage)": {
+              "label": "mapping(uint256 => struct VoteContract.Candidate)",
+              "numberOfBytes": "32"
+            },
+            "t_string_storage": {
+              "label": "string",
+              "numberOfBytes": "32"
+            },
+            "t_struct(Candidate)66_storage": {
+              "label": "struct VoteContract.Candidate",
+              "members": [
+                {
+                  "label": "name",
+                  "type": "t_string_storage",
+                  "offset": 0,
+                  "slot": "0"
+                },
+                {
+                  "label": "stakeholder",
+                  "type": "t_string_storage",
+                  "offset": 0,
+                  "slot": "1"
+                },
+                {
+                  "label": "voteCount",
+                  "type": "t_uint256",
+                  "offset": 0,
+                  "slot": "2"
+                },
+                {
+                  "label": "voteID",
+                  "type": "t_uint256",
+                  "offset": 0,
+                  "slot": "3"
+                },
+                {
+                  "label": "candidateId",
+                  "type": "t_uint256",
+                  "offset": 0,
+                  "slot": "4"
+                }
+              ],
+              "numberOfBytes": "160"
+            },
+            "t_struct(Voter)123_storage": {
+              "label": "struct VoteContract.Voter",
+              "members": [
+                {
+                  "label": "voterAddress",
+                  "type": "t_address",
+                  "offset": 0,
+                  "slot": "0"
+                },
+                {
+                  "label": "name",
+                  "type": "t_string_storage",
+                  "offset": 0,
+                  "slot": "1"
+                },
+                {
+                  "label": "constituency",
+                  "type": "t_uint256",
+                  "offset": 0,
+                  "slot": "2"
+                },
+                {
+                  "label": "hasVoted",
+                  "type": "t_bool",
+                  "offset": 0,
+                  "slot": "3"
+                },
+                {
+                  "label": "isVerified",
+                  "type": "t_bool",
+                  "offset": 1,
+                  "slot": "3"
+                }
+              ],
+              "numberOfBytes": "128"
+            },
+            "t_uint256": {
+              "label": "uint256",
+              "numberOfBytes": "32"
+            }
+          },
+          "layoutVersion": "1.1",
+          "flat": true
+        }
+      }
+    }
+  ]
+}
